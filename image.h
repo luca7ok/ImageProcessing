@@ -1,5 +1,7 @@
 #pragma once
 #include <string>
+#include "size.h"
+
 class Image{
 public:
 	Image();

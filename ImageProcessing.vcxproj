@@ -130,6 +130,7 @@
     <ClInclude Include="brightnessContrastAdjustment.h" />
     <ClInclude Include="image.h" />
     <ClInclude Include="imageProcessing.h" />
+    <ClInclude Include="size.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="brightnessContrastAdjustment.cpp" />
