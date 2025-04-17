@@ -6,15 +6,14 @@
 class Image{
 public:
 	Image();
-	Image(unsigned int w, unsigned int h, unsigned int mV);
+	Image(unsigned int w, unsigned int h);
 	Image(const Image& other);
+	Image& operator=(const Image& other);
 
 	~Image();
-	Image& operator=(const Image& other);
 	bool load(std::string imagePath);
-	/*bool save(std::string imagePath);
-
-	
+	bool save(std::string imagePath);
+	/*
 	Image operator+(const Image& i);
 	Image operator-(const Image& i);
 	friend std::ostream& operator<<(std::ostream& os, const Image& dt);
@@ -41,5 +40,4 @@ private:
 	unsigned char** m_data;
 	unsigned int m_width;
 	unsigned int m_height;
-	unsigned int maxValue;
 };

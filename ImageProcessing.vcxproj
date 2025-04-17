@@ -149,6 +149,7 @@
     <None Include="inputImages\casablanca.ascii.pgm" />
     <None Include="inputImages\coins.ascii.pgm" />
     <None Include="inputImages\columns.ascii.pgm" />
+    <None Include="output.ascii.pgm" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

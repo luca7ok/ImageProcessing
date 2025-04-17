@@ -6,13 +6,11 @@ Image::Image() {
 	this->m_data = nullptr;
 	this->m_width = 0;
 	this->m_height = 0;
-	this->maxValue = 0;
 }
 
-Image::Image(unsigned int w, unsigned int h, unsigned int mV) {
+Image::Image(unsigned int w, unsigned int h) {
 	this->m_width = w;
 	this->m_height = h;
-	this->maxValue = mV;
 	if (this->m_width == 0 || this->m_height == 0) {
 		this->m_width = 0;
 		this->m_height = 0;
@@ -29,7 +27,6 @@ Image::Image(unsigned int w, unsigned int h, unsigned int mV) {
 Image::Image(const Image& other) {
 	this->m_width = other.m_width;
 	this->m_height = other.m_height;
-	this->maxValue = other.maxValue;
 
 	this->m_data = new unsigned char* [this->m_height];
 	for (unsigned int i = 0; i < this->m_height; i++) {
@@ -61,7 +58,6 @@ Image& Image::operator=(const Image& other) {
 
 		this->m_width = other.m_width;
 		this->m_height = other.m_height;
-		this->maxValue = other.maxValue;
 
 		this->m_data = new unsigned char* [this->m_height];
 		for (unsigned int i = 0; i < this->m_height; i++) {
@@ -96,7 +92,7 @@ bool Image::load(std::string imagePath) {
 
 	std::string line;
 	std::string magicNumber;
-	unsigned int width = 0, height = 0, maxValue = 0;
+	unsigned int width = 0, height = 0;
 
 	while (std::getline(file, line)) {
 		if (line.empty() || line[0] == '#')
@@ -113,13 +109,16 @@ bool Image::load(std::string imagePath) {
 				dim >> this->m_width>>this->m_height;
 				break;
 			}
+
 			while (std::getline(file, line)) {
 				if (line.empty() || line[0] == '#')
 					continue;
 				std::istringstream max(line);
-				max >> this->maxValue;
+				unsigned int maxValue;
+				max >> maxValue;
 				break;
 			}
+
 			break;
 		}
 	}
@@ -136,10 +135,43 @@ bool Image::load(std::string imagePath) {
 	}
 
 	unsigned int pixel;
+	unsigned int minValue = 0;
+	unsigned int maxValue = 255;
+
 	for (unsigned int i = 0; i < this->m_height; i++) {
 		for (unsigned int j = 0; j < this->m_width; j++) {
 			file >> pixel;
+			pixel = std::max(minValue, pixel);
+			pixel = std::min(maxValue, pixel);
 			this->m_data[i][j] = static_cast<unsigned char>(pixel);
+		}
+	}
+	return true;
+}
+
+bool Image::save(std::string imagePath) {
+	std::ofstream file(imagePath);
+	if (!file.is_open()) {
+		std::cerr << "Error: Could not open file " << imagePath << '\n';
+		return false;
+	}
+
+	file << "P2\n";
+	file << this->m_width << ' ' << this->m_height << '\n';
+	file << "255\n";
+
+	const int valuesPerLine = 12;
+	int current = 0;
+
+	for (unsigned int i = 0; i < this->m_height; i++) {
+		for (unsigned int j = 0; j < this->m_width; j++) {
+			file << static_cast<unsigned int>(this->m_data[i][j]) << ' ';
+			current++;
+
+			if (current >= valuesPerLine) {
+				file << '\n';
+				current = 0;
+			}
 		}
 	}
 	return true;

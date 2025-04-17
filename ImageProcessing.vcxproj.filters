@@ -76,5 +76,6 @@
     <None Include="inputImages\columns.ascii.pgm">
       <Filter>inputImages</Filter>
     </None>
+    <None Include="output.ascii.pgm" />
   </ItemGroup>
 </Project>
