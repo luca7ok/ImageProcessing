@@ -8,5 +8,5 @@ private:
 public:
 	BrightnessContrastAdjustment(float alpha = 1.0f, float beta = 0.0f);
 
-	void process(const Image& src, Image& dst) override;
+	//void process(const Image& src, Image& dst) override;
 };

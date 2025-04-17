@@ -13,6 +13,9 @@
       <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
       <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
     </Filter>
+    <Filter Include="inputImages">
+      <UniqueIdentifier>{bb28a6e4-94b1-4a0c-85fc-7bfa11031ac9}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="image.h">
@@ -38,5 +41,40 @@
     <ClCompile Include="image.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="imageProcessing.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="inputImages\apollonian_gasket.ascii.pgm">
+      <Filter>inputImages</Filter>
+    </None>
+    <None Include="inputImages\baboon.ascii.pgm">
+      <Filter>inputImages</Filter>
+    </None>
+    <None Include="inputImages\balloons.ascii.pgm">
+      <Filter>inputImages</Filter>
+    </None>
+    <None Include="inputImages\balloons_noisy.ascii.pgm">
+      <Filter>inputImages</Filter>
+    </None>
+    <None Include="inputImages\barbara.ascii.pgm">
+      <Filter>inputImages</Filter>
+    </None>
+    <None Include="inputImages\body1.ascii.pgm">
+      <Filter>inputImages</Filter>
+    </None>
+    <None Include="inputImages\brain_398.ascii.pgm">
+      <Filter>inputImages</Filter>
+    </None>
+    <None Include="inputImages\casablanca.ascii.pgm">
+      <Filter>inputImages</Filter>
+    </None>
+    <None Include="inputImages\coins.ascii.pgm">
+      <Filter>inputImages</Filter>
+    </None>
+    <None Include="inputImages\columns.ascii.pgm">
+      <Filter>inputImages</Filter>
+    </None>
   </ItemGroup>
 </Project>

@@ -135,7 +135,20 @@
   <ItemGroup>
     <ClCompile Include="brightnessContrastAdjustment.cpp" />
     <ClCompile Include="image.cpp" />
+    <ClCompile Include="imageProcessing.cpp" />
     <ClCompile Include="main.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="inputImages\apollonian_gasket.ascii.pgm" />
+    <None Include="inputImages\baboon.ascii.pgm" />
+    <None Include="inputImages\balloons.ascii.pgm" />
+    <None Include="inputImages\balloons_noisy.ascii.pgm" />
+    <None Include="inputImages\barbara.ascii.pgm" />
+    <None Include="inputImages\body1.ascii.pgm" />
+    <None Include="inputImages\brain_398.ascii.pgm" />
+    <None Include="inputImages\casablanca.ascii.pgm" />
+    <None Include="inputImages\coins.ascii.pgm" />
+    <None Include="inputImages\columns.ascii.pgm" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
