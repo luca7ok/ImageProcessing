@@ -17,9 +17,9 @@ Image::Image(unsigned int w, unsigned int h) {
 		this->m_data = nullptr;
 	}
 	else {
-		this->m_data = new unsigned char* [this->m_height];
+		this->m_data = new uint8_t* [this->m_height];
 		for (unsigned int i = 0; i < this->m_height; i++) {
-			this->m_data[i] = new unsigned char[this->m_width];
+			this->m_data[i] = new uint8_t[this->m_width];
 		}
 	}
 }
@@ -28,9 +28,9 @@ Image::Image(const Image& other) {
 	this->m_width = other.m_width;
 	this->m_height = other.m_height;
 
-	this->m_data = new unsigned char* [this->m_height];
+	this->m_data = new uint8_t* [this->m_height];
 	for (unsigned int i = 0; i < this->m_height; i++) {
-		this->m_data[i] = new unsigned char[this->m_width];
+		this->m_data[i] = new uint8_t[this->m_width];
 
 		for (unsigned int j = 0; j < this->m_width; j++) {
 			this->m_data[i][j] = other.m_data[i][j];
@@ -59,9 +59,9 @@ Image& Image::operator=(const Image& other) {
 		this->m_width = other.m_width;
 		this->m_height = other.m_height;
 
-		this->m_data = new unsigned char* [this->m_height];
+		this->m_data = new uint8_t* [this->m_height];
 		for (unsigned int i = 0; i < this->m_height; i++) {
-			this->m_data[i] = new unsigned char[this->m_width];
+			this->m_data[i] = new uint8_t[this->m_width];
 
 			for (unsigned int j = 0; j < this->m_width; j++) {
 				this->m_data[i][j] = other.m_data[i][j];
@@ -101,7 +101,7 @@ bool Image::load(std::string imagePath) {
 		std::istringstream iss(line);
 		iss >> magicNumber;
 		
-		if (magicNumber == "P2") {
+		if (magicNumber == "P2" || magicNumber == "P5") {
 			while (std::getline(file, line)) {
 				if (line.empty() || line[0] == '#')
 					continue;
@@ -129,9 +129,9 @@ bool Image::load(std::string imagePath) {
 		delete[] this->m_data;
 	}
 
-	this->m_data = new unsigned char* [this->m_height];
+	this->m_data = new uint8_t* [this->m_height];
 	for (unsigned int i = 0; i < this->m_height; i++) {
-		this->m_data[i] = new unsigned char[this->m_width];
+		this->m_data[i] = new uint8_t[this->m_width];
 	}
 
 	unsigned int pixel;
@@ -175,4 +175,13 @@ bool Image::save(std::string imagePath) {
 		}
 	}
 	return true;
+}
+
+std::ostream& operator<<(std::ostream& os, const Image& dt) {
+	for (unsigned int i = 0; i < dt.m_height; i++, os<<'\n') {
+		for (unsigned int j = 0; j < dt.m_width; j++) {
+			os << static_cast<unsigned int>(dt.m_data[i][j]) << ' ';
+		}
+	}
+	return os;
 }

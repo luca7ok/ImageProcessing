@@ -2,6 +2,7 @@
 #include <string>
 #include "size.h"
 #include <iostream>
+#include <cstdint>
 
 class Image{
 public:
@@ -13,10 +14,11 @@ public:
 	~Image();
 	bool load(std::string imagePath);
 	bool save(std::string imagePath);
-	/*
-	Image operator+(const Image& i);
-	Image operator-(const Image& i);
+	
+	
 	friend std::ostream& operator<<(std::ostream& os, const Image& dt);
+	/*Image operator+(const Image& i);
+	Image operator-(const Image& i);
 
 	bool getROI(Image& roiImg, Rectangle roiRect);
 	bool getROI(Image& roiImg, unsigned int x, unsigned int y, unsigned int width, unsigned int height);
@@ -37,7 +39,7 @@ public:
 	static Image zeros(unsigned int width, unsigned int height);
 	static Image ones(unsigned int width, unsigned int height); */
 private:
-	unsigned char** m_data;
+	uint8_t** m_data;
 	unsigned int m_width;
 	unsigned int m_height;
 };
