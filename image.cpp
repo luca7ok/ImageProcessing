@@ -165,7 +165,7 @@ bool Image::save(std::string imagePath) {
 
 	for (unsigned int i = 0; i < this->m_height; i++) {
 		for (unsigned int j = 0; j < this->m_width; j++) {
-			file << static_cast<unsigned int>(this->m_data[i][j]) << ' ';
+			file << static_cast<unsigned int>(this->m_data[i][j]) << std::setw(3) << ' ';
 			current++;
 
 			if (current >= valuesPerLine) {
@@ -180,7 +180,7 @@ bool Image::save(std::string imagePath) {
 std::ostream& operator<<(std::ostream& os, const Image& dt) {
 	for (unsigned int i = 0; i < dt.m_height; i++, os<<'\n') {
 		for (unsigned int j = 0; j < dt.m_width; j++) {
-			os << static_cast<unsigned int>(dt.m_data[i][j]) << ' ';
+			os << static_cast<unsigned int>(dt.m_data[i][j]) << std::setw(3) << ' ';
 		}
 	}
 	return os;

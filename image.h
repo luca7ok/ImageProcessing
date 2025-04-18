@@ -3,6 +3,7 @@
 #include "size.h"
 #include <iostream>
 #include <cstdint>
+#include <iomanip>
 
 class Image{
 public:
