@@ -1,6 +1,7 @@
 #include "image.h"
 #include <fstream>
 #include <sstream>
+#include <exception>
 
 Image::Image() {
 	this->m_data = nullptr;
@@ -39,22 +40,12 @@ Image::Image(const Image& other) {
 }
 
 Image::~Image() {
-	if (this->m_data) {
-		for (unsigned int i = 0; i < this->m_height; i++) {
-			delete[] this->m_data[i];
-		}
-		delete[] this->m_data;
-	}
+	release();
 }
 
 Image& Image::operator=(const Image& other) {
 	if (this != &other) {
-		if (this->m_data) {
-			for (unsigned int i = 0; i < this->m_height; i++) {
-				delete[] this->m_data[i];
-			}
-			delete[] this->m_data;
-		}
+		release();
 
 		this->m_width = other.m_width;
 		this->m_height = other.m_height;
@@ -86,7 +77,7 @@ Size Image::size() const {
 bool Image::load(std::string imagePath) {
 	std::ifstream file(imagePath);
 	if (!file.is_open()) {
-		std::cerr << "Error: Could not open file " << imagePath << '\n';
+		throw std::invalid_argument("Error: Could not open the file");
 		return false;
 	}
 
@@ -121,13 +112,11 @@ bool Image::load(std::string imagePath) {
 
 			break;
 		}
-	}
-	if (this->m_data) {
-		for (unsigned int i = 0; i < this->m_height; i++) {
-			delete[] this->m_data[i];
+		else {
+			throw std::invalid_argument("Invalid PGM format");
 		}
-		delete[] this->m_data;
 	}
+	release();
 
 	this->m_data = new uint8_t* [this->m_height];
 	for (unsigned int i = 0; i < this->m_height; i++) {
@@ -146,13 +135,14 @@ bool Image::load(std::string imagePath) {
 			this->m_data[i][j] = static_cast<unsigned char>(pixel);
 		}
 	}
+	file.close();
 	return true;
 }
 
 bool Image::save(std::string imagePath) {
 	std::ofstream file(imagePath);
 	if (!file.is_open()) {
-		std::cerr << "Error: Could not open file " << imagePath << '\n';
+		throw std::invalid_argument("Error: Could not open the file");
 		return false;
 	}
 
@@ -165,7 +155,7 @@ bool Image::save(std::string imagePath) {
 
 	for (unsigned int i = 0; i < this->m_height; i++) {
 		for (unsigned int j = 0; j < this->m_width; j++) {
-			file << static_cast<unsigned int>(this->m_data[i][j]) << std::setw(3) << ' ';
+			file << std::setw(3) << static_cast<unsigned int>(this->m_data[i][j]) << "  ";
 			current++;
 
 			if (current >= valuesPerLine) {
@@ -174,14 +164,109 @@ bool Image::save(std::string imagePath) {
 			}
 		}
 	}
+	file.close();
 	return true;
 }
 
 std::ostream& operator<<(std::ostream& os, const Image& dt) {
 	for (unsigned int i = 0; i < dt.m_height; i++, os<<'\n') {
 		for (unsigned int j = 0; j < dt.m_width; j++) {
-			os << static_cast<unsigned int>(dt.m_data[i][j]) << std::setw(3) << ' ';
+			os << std::setw(3) << static_cast<unsigned int>(dt.m_data[i][j]) << "  ";
 		}
 	}
 	return os;
+}
+
+Image Image::operator+(const Image& image) const {
+	if (this->m_width != image.m_width || this->m_height != image.m_height) {
+		throw std::invalid_argument("Width and height are not the same");
+	}
+	
+	Image result(this->m_width, this->m_height);
+	for (unsigned int i = 0; i < this->m_height; i++) {
+		for (unsigned int j = 0; j < this->m_width; j++) {
+			int sum = this->m_data[i][j] + image.m_data[i][j];
+			result.m_data[i][j] = static_cast<uint8_t>(std::min(sum, 255));
+		}
+	}
+	return result;
+}
+
+Image Image::operator-(const Image& image) const {
+	if (this->m_width != image.m_width || this->m_height != image.m_height) {
+		throw std::invalid_argument("Width and height are not the same");
+	}
+
+	Image result(this->m_width, this->m_height);
+	for (unsigned int i = 0; i < this->m_height; i++) {
+		for (unsigned int j = 0; j < this->m_width; j++) {
+			int sum = this->m_data[i][j] - image.m_data[i][j];
+			result.m_data[i][j] = static_cast<uint8_t>(std::max(sum, 0));
+		}
+	}
+	return result;
+}
+
+Image Image::operator+(int8_t scalar) const {
+	Image result(this->m_width, this->m_height);
+	for (unsigned int i = 0; i < this->m_height; i++) {
+		for (unsigned int j = 0; j < this->m_width; j++) {
+			int sum = this->m_data[i][j] + scalar;;
+			result.m_data[i][j] = static_cast<uint8_t>(std::max(std::min(sum, 255), 0));
+		}
+	}
+	return result;
+}
+
+Image Image::operator-(int8_t scalar) const {
+	Image result(this->m_width, this->m_height);
+	for (unsigned int i = 0; i < this->m_height; i++) {
+		for (unsigned int j = 0; j < this->m_width; j++) {
+			int sum = this->m_data[i][j] - scalar;;
+			result.m_data[i][j] = static_cast<uint8_t>(std::max(std::min(sum, 255), 0));
+		}
+	}
+	return result;
+}
+
+Image Image::operator*(int8_t scalar) const {
+	Image result(this->m_width, this->m_height);
+	for (unsigned int i = 0; i < this->m_height; i++) {
+		for (unsigned int j = 0; j < this->m_width; j++) {
+			int sum = this->m_data[i][j] * scalar;;
+			result.m_data[i][j] = static_cast<uint8_t>(std::max(std::min(sum, 255), 0));
+		}
+	}
+	return result;
+}
+
+bool Image::isEmpty() const {
+	return this->m_data == nullptr || this->m_width == 0 || this->m_height == 0;
+}
+
+uint8_t& Image::at(unsigned int x, unsigned int y) const {
+	if (x >= this->m_height || y >= this->m_width) {
+		throw std::invalid_argument("Position out of range");
+	}
+	return this->m_data[x][y];
+}
+
+uint8_t& Image::at(Point pt) const {
+	return at(pt.x, pt.y);
+}
+
+uint8_t* Image::row(int y) const {
+	if (y < 0 || y >= this->m_height) {
+		throw std::invalid_argument("Position out of range");
+	}
+	return this->m_data[y];
+}
+
+void Image::release() {
+	if (this->m_data) {
+		for (unsigned int i = 0; i < this->m_height; i++) {
+			delete[] this->m_data[i];
+		}
+		delete[] this->m_data;
+	}
 }

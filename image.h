@@ -4,8 +4,13 @@
 #include <iostream>
 #include <cstdint>
 #include <iomanip>
+#include "rectangle.h"
 
 class Image{
+private:
+	uint8_t** m_data;
+	unsigned int m_width;
+	unsigned int m_height;
 public:
 	Image();
 	Image(unsigned int w, unsigned int h);
@@ -13,34 +18,33 @@ public:
 	Image& operator=(const Image& other);
 
 	~Image();
+
 	bool load(std::string imagePath);
 	bool save(std::string imagePath);
 	
-	
 	friend std::ostream& operator<<(std::ostream& os, const Image& dt);
-	/*Image operator+(const Image& i);
-	Image operator-(const Image& i);
-
+	Image operator+(const Image& i) const;
+	Image operator-(const Image& i) const;
+	Image operator+(int8_t scalar) const;
+	Image operator-(int8_t scalar) const;
+	Image operator*(int8_t scalar) const;
+	/*
 	bool getROI(Image& roiImg, Rectangle roiRect);
 	bool getROI(Image& roiImg, unsigned int x, unsigned int y, unsigned int width, unsigned int height);
-	
-	bool isEmpty() const;*/
+	*/
+	bool isEmpty() const;
 	Size size() const;
 
 	unsigned int width() const;
 	unsigned int height() const;
-	/*
-	unsigned char& at(unsigned int x, unsigned int y);
-	unsigned char& at(Point pt);
-
-	unsigned char* row(int y);
-
-	void release();
 	
+	uint8_t& at(unsigned int x, unsigned int y) const;
+	uint8_t& at(Point pt) const;
+	
+	uint8_t* row(int y) const;
+	
+	void release();
+	/*
 	static Image zeros(unsigned int width, unsigned int height);
 	static Image ones(unsigned int width, unsigned int height); */
-private:
-	uint8_t** m_data;
-	unsigned int m_width;
-	unsigned int m_height;
 };

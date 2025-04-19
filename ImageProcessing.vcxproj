@@ -130,6 +130,8 @@
     <ClInclude Include="brightnessContrastAdjustment.h" />
     <ClInclude Include="image.h" />
     <ClInclude Include="imageProcessing.h" />
+    <ClInclude Include="point.h" />
+    <ClInclude Include="rectangle.h" />
     <ClInclude Include="size.h" />
   </ItemGroup>
   <ItemGroup>
@@ -137,6 +139,8 @@
     <ClCompile Include="image.cpp" />
     <ClCompile Include="imageProcessing.cpp" />
     <ClCompile Include="main.cpp" />
+    <ClCompile Include="point.cpp" />
+    <ClCompile Include="rectangle.cpp" />
   </ItemGroup>
   <ItemGroup>
     <None Include="inputImages\apollonian_gasket.ascii.pgm" />
