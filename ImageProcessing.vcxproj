@@ -128,15 +128,20 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClInclude Include="brightnessContrastAdjustment.h" />
+    <ClInclude Include="gammaCorrection.h" />
     <ClInclude Include="image.h" />
+    <ClInclude Include="imageConvolution.h" />
     <ClInclude Include="imageProcessing.h" />
+    <ClInclude Include="kernels.h" />
     <ClInclude Include="point.h" />
     <ClInclude Include="rectangle.h" />
     <ClInclude Include="size.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="brightnessContrastAdjustment.cpp" />
+    <ClCompile Include="gammaCorrection.cpp" />
     <ClCompile Include="image.cpp" />
+    <ClCompile Include="imageConvolution.cpp" />
     <ClCompile Include="imageProcessing.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="point.cpp" />

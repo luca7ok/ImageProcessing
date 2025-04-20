@@ -44,7 +44,7 @@ public:
 	uint8_t* row(int y) const;
 	
 	void release();
-	/*
+	
 	static Image zeros(unsigned int width, unsigned int height);
-	static Image ones(unsigned int width, unsigned int height); */
+	static Image ones(unsigned int width, unsigned int height); 
 };

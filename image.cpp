@@ -39,6 +39,15 @@ Image::Image(const Image& other) {
 	}
 }
 
+void Image::release() {
+	if (this->m_data) {
+		for (unsigned int i = 0; i < this->m_height; i++) {
+			delete[] this->m_data[i];
+		}
+		delete[] this->m_data;
+	}
+}
+
 Image::~Image() {
 	release();
 }
@@ -262,11 +271,23 @@ uint8_t* Image::row(int y) const {
 	return this->m_data[y];
 }
 
-void Image::release() {
-	if (this->m_data) {
-		for (unsigned int i = 0; i < this->m_height; i++) {
-			delete[] this->m_data[i];
+
+Image Image::zeros(unsigned int width, unsigned int height) {
+	Image image(width, height);
+	for (unsigned int i = 0; i < height; i++) {
+		for (unsigned int j = 0; j < width; j++) {
+			image.m_data[i][j] = 0;
 		}
-		delete[] this->m_data;
 	}
+	return image;
+}
+
+Image Image::ones(unsigned int width, unsigned int height) {
+	Image image(width, height);
+	for (unsigned int i = 0; i < height; i++) {
+		for (unsigned int j = 0; j < width; j++) {
+			image.m_data[i][j] = 1;
+		}
+	}
+	return image;
 }
