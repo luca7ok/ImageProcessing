@@ -1,0 +1,127 @@
+\doxysection{Drawing Namespace Reference}
+\hypertarget{namespace_drawing}{}\label{namespace_drawing}\index{Drawing@{Drawing}}
+
+
+Provides 2D primitive drawing functions for images.  
+
+
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{namespace_drawing_a7b026e7fb01b5b7f565f3f3ee13d064c}{draw\+Circle}} (\mbox{\hyperlink{class_image}{Image}} \&img, \mbox{\hyperlink{class_point}{Point}} center, int radius, uint8\+\_\+t color)
+\begin{DoxyCompactList}\small\item\em Draws a circle outline using the midpoint algorithm. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{namespace_drawing_a9a107947814051b790bd448a6d16a13c}{draw\+Line}} (\mbox{\hyperlink{class_image}{Image}} \&img, \mbox{\hyperlink{class_point}{Point}} p1, \mbox{\hyperlink{class_point}{Point}} p2, uint8\+\_\+t color)
+\begin{DoxyCompactList}\small\item\em Draws a line using Bresenham\textquotesingle{}s algorithm. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{namespace_drawing_ae1fbb6377f0a329d7e27474a67cca11e}{draw\+Rectangle}} (\mbox{\hyperlink{class_image}{Image}} \&img, \mbox{\hyperlink{class_rectangle}{Rectangle}} r, uint8\+\_\+t color)
+\begin{DoxyCompactList}\small\item\em Draws a rectangle outline from a \doxylink{class_rectangle}{Rectangle} object. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{namespace_drawing_a4039b796ada8a749f0a00189e3e62977}{draw\+Rectangle}} (\mbox{\hyperlink{class_image}{Image}} \&img, \mbox{\hyperlink{class_point}{Point}} tl, \mbox{\hyperlink{class_point}{Point}} br, uint8\+\_\+t color)
+\begin{DoxyCompactList}\small\item\em Draws a rectangle outline from two corner points. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Provides 2D primitive drawing functions for images. 
+
+Implements common rasterization algorithms
+\begin{DoxyItemize}
+\item Midpoint circle algorithm
+\item Bresenham\textquotesingle{}s line algorithm
+\item \doxylink{class_rectangle}{Rectangle} outline drawing \begin{DoxyNote}{Note}
+All functions perform bounds checking and modify the image in-\/place. 
+\end{DoxyNote}
+
+\end{DoxyItemize}
+
+\doxysubsection{Function Documentation}
+\Hypertarget{namespace_drawing_a7b026e7fb01b5b7f565f3f3ee13d064c}\index{Drawing@{Drawing}!drawCircle@{drawCircle}}
+\index{drawCircle@{drawCircle}!Drawing@{Drawing}}
+\doxysubsubsection{\texorpdfstring{drawCircle()}{drawCircle()}}
+{\footnotesize\ttfamily \label{namespace_drawing_a7b026e7fb01b5b7f565f3f3ee13d064c} 
+void Drawing\+::draw\+Circle (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_image}{Image}} \&}]{img}{, }\item[{\mbox{\hyperlink{class_point}{Point}}}]{center}{, }\item[{int}]{radius}{, }\item[{uint8\+\_\+t}]{color}{}\end{DoxyParamCaption})}
+
+
+
+Draws a circle outline using the midpoint algorithm. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em img} & Target image (must be non-\/empty) \\
+\hline
+{\em center} & Center point of the circle \\
+\hline
+{\em radius} & Radius of the circle (must be \texorpdfstring{$>$}{>} 0) \\
+\hline
+{\em color} & Grayscale color value (0-\/255) \\
+\hline
+\end{DoxyParams}
+\begin{DoxyNote}{Note}
+Only draws pixels within image bounds. 
+\end{DoxyNote}
+\Hypertarget{namespace_drawing_a9a107947814051b790bd448a6d16a13c}\index{Drawing@{Drawing}!drawLine@{drawLine}}
+\index{drawLine@{drawLine}!Drawing@{Drawing}}
+\doxysubsubsection{\texorpdfstring{drawLine()}{drawLine()}}
+{\footnotesize\ttfamily \label{namespace_drawing_a9a107947814051b790bd448a6d16a13c} 
+void Drawing\+::draw\+Line (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_image}{Image}} \&}]{img}{, }\item[{\mbox{\hyperlink{class_point}{Point}}}]{p1}{, }\item[{\mbox{\hyperlink{class_point}{Point}}}]{p2}{, }\item[{uint8\+\_\+t}]{color}{}\end{DoxyParamCaption})}
+
+
+
+Draws a line using Bresenham\textquotesingle{}s algorithm. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em img} & Target image (must be non-\/empty) \\
+\hline
+{\em p1} & Starting point of the line \\
+\hline
+{\em p2} & Ending point of the line \\
+\hline
+{\em color} & Grayscale color value (0-\/255) \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyExceptions}{Exceptions}
+{\em std\+::invalid\+\_\+argument} & if image is empty \\
+\hline
+\end{DoxyExceptions}
+\begin{DoxyNote}{Note}
+Handles all slope cases and only draws visible pixels 
+\end{DoxyNote}
+\Hypertarget{namespace_drawing_a4039b796ada8a749f0a00189e3e62977}\index{Drawing@{Drawing}!drawRectangle@{drawRectangle}}
+\index{drawRectangle@{drawRectangle}!Drawing@{Drawing}}
+\doxysubsubsection{\texorpdfstring{drawRectangle()}{drawRectangle()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \label{namespace_drawing_a4039b796ada8a749f0a00189e3e62977} 
+void Drawing\+::draw\+Rectangle (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_image}{Image}} \&}]{img}{, }\item[{\mbox{\hyperlink{class_point}{Point}}}]{tl}{, }\item[{\mbox{\hyperlink{class_point}{Point}}}]{br}{, }\item[{uint8\+\_\+t}]{color}{}\end{DoxyParamCaption})}
+
+
+
+Draws a rectangle outline from two corner points. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em img} & Target image (must be non-\/empty) \\
+\hline
+{\em tl} & Top-\/left corner point \\
+\hline
+{\em br} & Bottom-\/right corner point \\
+\hline
+{\em color} & Grayscale color value (0-\/255) \\
+\hline
+\end{DoxyParams}
+\Hypertarget{namespace_drawing_ae1fbb6377f0a329d7e27474a67cca11e}\index{Drawing@{Drawing}!drawRectangle@{drawRectangle}}
+\index{drawRectangle@{drawRectangle}!Drawing@{Drawing}}
+\doxysubsubsection{\texorpdfstring{drawRectangle()}{drawRectangle()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \label{namespace_drawing_ae1fbb6377f0a329d7e27474a67cca11e} 
+void Drawing\+::draw\+Rectangle (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_image}{Image}} \&}]{img}{, }\item[{\mbox{\hyperlink{class_rectangle}{Rectangle}}}]{r}{, }\item[{uint8\+\_\+t}]{color}{}\end{DoxyParamCaption})}
+
+
+
+Draws a rectangle outline from a \doxylink{class_rectangle}{Rectangle} object. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em img} & Target image (must be non-\/empty) \\
+\hline
+{\em r} & \doxylink{class_rectangle}{Rectangle} to draw (position + dimensions) \\
+\hline
+{\em color} & Grayscale color value (0-\/255) \\
+\hline
+\end{DoxyParams}

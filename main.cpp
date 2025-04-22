@@ -12,7 +12,6 @@ int main() {
 		/*for (const auto& entry : std::filesystem::directory_iterator("inputImages")){
 			std::cout<<entry.path().filename().string()<<'\n';
 		}*/
-
 	}
 	catch (std::exception& e) {
 		std::cerr << e.what() << '\n';

@@ -1,0 +1,56 @@
+\doxysection{Image\+Processing Class Reference}
+\hypertarget{class_image_processing}{}\label{class_image_processing}\index{ImageProcessing@{ImageProcessing}}
+
+
+Abstract base class for image processing operations.  
+
+
+
+
+{\ttfamily \#include $<$image\+Processing.\+h$>$}
+
+Inheritance diagram for Image\+Processing\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=1.996435cm]{class_image_processing}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual void \mbox{\hyperlink{class_image_processing_af4a3ae35ed79eba185e9db8b5e0fa075}{process}} (const \mbox{\hyperlink{class_image}{Image}} \&src, \mbox{\hyperlink{class_image}{Image}} \&dst)=0
+\begin{DoxyCompactList}\small\item\em Pure virtual function to process an input image and store the result. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Abstract base class for image processing operations. 
+
+Derived classes must implement the {\ttfamily \doxylink{class_image_processing_af4a3ae35ed79eba185e9db8b5e0fa075}{process()}} method to apply specific transformations to images 
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_image_processing_af4a3ae35ed79eba185e9db8b5e0fa075}\index{ImageProcessing@{ImageProcessing}!process@{process}}
+\index{process@{process}!ImageProcessing@{ImageProcessing}}
+\doxysubsubsection{\texorpdfstring{process()}{process()}}
+{\footnotesize\ttfamily \label{class_image_processing_af4a3ae35ed79eba185e9db8b5e0fa075} 
+virtual void Image\+Processing\+::process (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_image}{Image}} \&}]{src}{, }\item[{\mbox{\hyperlink{class_image}{Image}} \&}]{dst}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Pure virtual function to process an input image and store the result. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em src} & Input image (source) to be processed \\
+\hline
+{\em dst} & Output image (destination) where the result is stored \\
+\hline
+\end{DoxyParams}
+
+
+Implemented in \mbox{\hyperlink{class_brightness_contrast_adjustment_a777cf7cf7e80e3894300c403b155074b}{Brightness\+Contrast\+Adjustment}}, \mbox{\hyperlink{class_gamma_correction_a3218aaad26cf7da8016457182277c633}{Gamma\+Correction}}, and \mbox{\hyperlink{class_image_convolution_af3db65c3ca2147e4195ab74e486e7f88}{Image\+Convolution}}.
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{image_processing_8h}{image\+Processing.\+h}}\end{DoxyCompactItemize}

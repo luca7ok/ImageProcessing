@@ -1,0 +1,68 @@
+\doxysection{kernels.\+h}
+\hypertarget{kernels_8h_source}{}\label{kernels_8h_source}\mbox{\hyperlink{kernels_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#pragma\ once}}
+\DoxyCodeLine{00002\ }
+\DoxyCodeLine{00003\ }
+\DoxyCodeLine{00009\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{structidentity}{identity}}\ \{}
+\DoxyCodeLine{00010\ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keyword}{constexpr}\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{structidentity_ae8834038e5ed1f4779d0d76f16ee851d}{kernel}}[3][3]\ =\ \{}
+\DoxyCodeLine{00011\ \ \ \ \ \ \ \ \ \{0,\ 0,\ 0\},}
+\DoxyCodeLine{00012\ \ \ \ \ \ \ \ \ \{0,\ 1,\ 0\},}
+\DoxyCodeLine{00013\ \ \ \ \ \ \ \ \ \{0,\ 0,\ 0\}}
+\DoxyCodeLine{00014\ \ \ \ \ \};}
+\DoxyCodeLine{00015\ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{structidentity_a0d42389b51e7d0b31a6280b4f4bcb78b}{scale}}(\textcolor{keywordtype}{float}\ value)\ \{}
+\DoxyCodeLine{00016\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ value;}
+\DoxyCodeLine{00017\ \ \ \ \ \}}
+\DoxyCodeLine{00018\ \};}
+\DoxyCodeLine{00019\ }
+\DoxyCodeLine{00025\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{structgaussian_blur}{gaussianBlur}}\ \{}
+\DoxyCodeLine{00026\ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keyword}{constexpr}\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{structgaussian_blur_ab2bdfc27b768f12143673d24e124e9e0}{kernel}}[3][3]\ =\ \{}
+\DoxyCodeLine{00027\ \ \ \ \ \ \ \ \ \{1,\ 2,\ 1\},}
+\DoxyCodeLine{00028\ \ \ \ \ \ \ \ \ \{2,\ 4,\ 2\},}
+\DoxyCodeLine{00029\ \ \ \ \ \ \ \ \ \{1,\ 2,\ 1\}}
+\DoxyCodeLine{00030\ \ \ \ \ \};}
+\DoxyCodeLine{00031\ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{structgaussian_blur_a1e16c12de955ac1a03e90551c20b8343}{scale}}(\textcolor{keywordtype}{float}\ value)\ \{}
+\DoxyCodeLine{00032\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ value\ /\ 16.0f;}
+\DoxyCodeLine{00033\ \ \ \ \ \}}
+\DoxyCodeLine{00034\ \};}
+\DoxyCodeLine{00035\ }
+\DoxyCodeLine{00036\ }
+\DoxyCodeLine{00042\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{structmean_blur}{meanBlur}}\ \{}
+\DoxyCodeLine{00043\ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keyword}{constexpr}\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{structmean_blur_ac47c92808e700e532342d301d7e9fab3}{kernel}}[3][3]\ =\ \{}
+\DoxyCodeLine{00044\ \ \ \ \ \ \ \ \ \{1,\ 1,\ 1\},}
+\DoxyCodeLine{00045\ \ \ \ \ \ \ \ \ \{1,\ 1,\ 1\},}
+\DoxyCodeLine{00046\ \ \ \ \ \ \ \ \ \{1,\ 1,\ 1\}}
+\DoxyCodeLine{00047\ \ \ \ \ \};}
+\DoxyCodeLine{00048\ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{structmean_blur_a0a17f3fda1e771e308bdf30cb79c4374}{scale}}(\textcolor{keywordtype}{float}\ value)\ \{}
+\DoxyCodeLine{00049\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ value\ /\ 9.0f;}
+\DoxyCodeLine{00050\ \ \ \ \ \}}
+\DoxyCodeLine{00051\ }
+\DoxyCodeLine{00052\ \};}
+\DoxyCodeLine{00053\ }
+\DoxyCodeLine{00060\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{structhorizontal_sobel}{horizontalSobel}}\ \{}
+\DoxyCodeLine{00061\ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keyword}{constexpr}\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{structhorizontal_sobel_aa454eebe237b2eb38f024105373eb44c}{kernel}}[3][3]\ =\ \{}
+\DoxyCodeLine{00062\ \ \ \ \ \ \ \ \ \{1,\ 2,\ 1\},}
+\DoxyCodeLine{00063\ \ \ \ \ \ \ \ \ \{0,\ 0,\ 0\},}
+\DoxyCodeLine{00064\ \ \ \ \ \ \ \ \ \{-\/1,\ -\/2,\ -\/1\}}
+\DoxyCodeLine{00065\ \ \ \ \ \};}
+\DoxyCodeLine{00066\ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{structhorizontal_sobel_a7a2852a0f6f24d4af0a9eb9ecb8e1ec0}{scale}}(\textcolor{keywordtype}{float}\ value)\ \{}
+\DoxyCodeLine{00067\ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{float}\ minInput\ =\ -\/4.0f\ *\ 255.0f;}
+\DoxyCodeLine{00068\ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{float}\ maxInput\ =\ 4.0f\ *\ 255.0f;}
+\DoxyCodeLine{00069\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ (value\ -\/\ minInput)\ *\ 255.0f\ /\ (maxInput\ -\/\ minInput);}
+\DoxyCodeLine{00070\ \ \ \ \ \}}
+\DoxyCodeLine{00071\ \};}
+\DoxyCodeLine{00072\ }
+\DoxyCodeLine{00079\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{structvertical_sobel}{verticalSobel}}\ \{}
+\DoxyCodeLine{00080\ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keyword}{constexpr}\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{structvertical_sobel_ae1fb0e6556d9d9563b214391fcb1d3e2}{kernel}}[3][3]\ =\ \{}
+\DoxyCodeLine{00081\ \ \ \ \ \ \ \ \ \{-\/1,\ 0,\ 1\},}
+\DoxyCodeLine{00082\ \ \ \ \ \ \ \ \ \{-\/2,\ 0,\ 2\},}
+\DoxyCodeLine{00083\ \ \ \ \ \ \ \ \ \{-\/1,\ 0,\ 1\}}
+\DoxyCodeLine{00084\ \ \ \ \ \};}
+\DoxyCodeLine{00085\ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{structvertical_sobel_aacd9a7d91f0cfb6e31bc11f01bc487dc}{scale}}(\textcolor{keywordtype}{float}\ value)\ \{}
+\DoxyCodeLine{00086\ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{float}\ minInput\ =\ -\/4.0f\ *\ 255.0f;}
+\DoxyCodeLine{00087\ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{float}\ maxInput\ =\ 4.0f\ *\ 255.0f;}
+\DoxyCodeLine{00088\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ (value\ -\/\ minInput)\ *\ 255.0f\ /\ (maxInput\ -\/\ minInput);}
+\DoxyCodeLine{00089\ \ \ \ \ \}}
+\DoxyCodeLine{00090\ \};}
+
+\end{DoxyCode}

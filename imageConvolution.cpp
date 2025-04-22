@@ -1,6 +1,6 @@
 #include "imageConvolution.h"
 
-ImageConvolution::ImageConvolution(int kW, int kH, const int k[][MAX_WIDTH], float (*sF)(float)) {
+ImageConvolution::ImageConvolution(int kW, int kH, const int k[][MAX_SIZE], float (*sF)(float)) {
 	if (kW %2 == 0 || kH % 2 == 0) {
 		throw std::invalid_argument("Kernal dimensions must be odd");
 	}

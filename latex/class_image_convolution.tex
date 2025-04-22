@@ -1,0 +1,153 @@
+\doxysection{Image\+Convolution Class Reference}
+\hypertarget{class_image_convolution}{}\label{class_image_convolution}\index{ImageConvolution@{ImageConvolution}}
+
+
+Applies kernel-\/based convolution to images with configurable scaling.  
+
+
+
+
+{\ttfamily \#include $<$image\+Convolution.\+h$>$}
+
+Inheritance diagram for Image\+Convolution\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_image_convolution}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_image_convolution_a15cb37d7339648f28b3bd66cdb670e5e}{Image\+Convolution}} (int kW, int kH, const int k\mbox{[}$\,$\mbox{]}\mbox{[}\mbox{\hyperlink{image_convolution_8h_a0592dba56693fad79136250c11e5a7fe}{MAX\+\_\+\+SIZE}}\mbox{]}, float(\texorpdfstring{$\ast$}{*}sF)(float))
+\begin{DoxyCompactList}\small\item\em Constructor. Creates a convolver with specified kernel and scaling function. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_image_convolution_af3db65c3ca2147e4195ab74e486e7f88}{process}} (const \mbox{\hyperlink{class_image}{Image}} \&src, \mbox{\hyperlink{class_image}{Image}} \&dst) override
+\begin{DoxyCompactList}\small\item\em Applies convolution to an image. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_image_convolution_a8d2b1ce246b9fed881f213938edb22f4}{\texorpdfstring{$\sim$}{\string~}\+Image\+Convolution}} ()
+\begin{DoxyCompactList}\small\item\em Destructor. Frees allocated kernel memory. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+int \mbox{\hyperlink{class_image_convolution_a190811cf4413d4705156fe8def2e8dcc}{kernel\+Width}}
+\begin{DoxyCompactList}\small\item\em Width of the convolution kernel (must be odd) \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{class_image_convolution_a8689b92b5f3820808339ae3cf76abfff}{kernel\+Height}}
+\begin{DoxyCompactList}\small\item\em Height of the convolution kernel (must be odd) \end{DoxyCompactList}\item 
+int8\+\_\+t \texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*} \mbox{\hyperlink{class_image_convolution_a92918fc13445381fc888fbbbd4847fcd}{kernel}}
+\begin{DoxyCompactList}\small\item\em 2D kernel matrix \end{DoxyCompactList}\item 
+float(\texorpdfstring{$\ast$}{*} \mbox{\hyperlink{class_image_convolution_adebc8f0512f6e5de559e6e65f7c2bb19}{scaling\+Function}} )(float)
+\begin{DoxyCompactList}\small\item\em Post-\/convolution scaling callback. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Applies kernel-\/based convolution to images with configurable scaling. 
+
+Supports arbitrary odd-\/sized kernels
+\begin{DoxyItemize}
+\item Kernel matrix application
+\item Custom post-\/processing scaling function 
+\end{DoxyItemize}
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{class_image_convolution_a15cb37d7339648f28b3bd66cdb670e5e}\index{ImageConvolution@{ImageConvolution}!ImageConvolution@{ImageConvolution}}
+\index{ImageConvolution@{ImageConvolution}!ImageConvolution@{ImageConvolution}}
+\doxysubsubsection{\texorpdfstring{ImageConvolution()}{ImageConvolution()}}
+{\footnotesize\ttfamily \label{class_image_convolution_a15cb37d7339648f28b3bd66cdb670e5e} 
+Image\+Convolution\+::\+Image\+Convolution (\begin{DoxyParamCaption}\item[{int}]{kW}{, }\item[{int}]{kH}{, }\item[{const int}]{k}{\mbox{[}$\,$\mbox{]}\mbox{[}\+MAX\+\_\+\+SIZE\mbox{]}, }\item[{float(\texorpdfstring{$\ast$}{*}}]{sF~}{)(float)}\end{DoxyParamCaption})}
+
+
+
+Constructor. Creates a convolver with specified kernel and scaling function. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em kW} & Kernel width (must be odd and \texorpdfstring{$<$}{<}= MAX\+\_\+\+SIZE). \\
+\hline
+{\em kH} & Kernel height (must be odd and \texorpdfstring{$<$}{<}= MAX\+\_\+\+SIZE). \\
+\hline
+{\em k} & Kernel matrix \\
+\hline
+{\em sF} & Scaling function to normalize results \\
+\hline
+\end{DoxyParams}
+\Hypertarget{class_image_convolution_a8d2b1ce246b9fed881f213938edb22f4}\index{ImageConvolution@{ImageConvolution}!````~ImageConvolution@{\texorpdfstring{$\sim$}{\string~}ImageConvolution}}
+\index{````~ImageConvolution@{\texorpdfstring{$\sim$}{\string~}ImageConvolution}!ImageConvolution@{ImageConvolution}}
+\doxysubsubsection{\texorpdfstring{\texorpdfstring{$\sim$}{\string~}ImageConvolution()}{\string~ImageConvolution()}}
+{\footnotesize\ttfamily \label{class_image_convolution_a8d2b1ce246b9fed881f213938edb22f4} 
+Image\+Convolution\+::\texorpdfstring{$\sim$}{\string~}\+Image\+Convolution (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Destructor. Frees allocated kernel memory. 
+
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_image_convolution_af3db65c3ca2147e4195ab74e486e7f88}\index{ImageConvolution@{ImageConvolution}!process@{process}}
+\index{process@{process}!ImageConvolution@{ImageConvolution}}
+\doxysubsubsection{\texorpdfstring{process()}{process()}}
+{\footnotesize\ttfamily \label{class_image_convolution_af3db65c3ca2147e4195ab74e486e7f88} 
+void Image\+Convolution\+::process (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_image}{Image}} \&}]{src}{, }\item[{\mbox{\hyperlink{class_image}{Image}} \&}]{dst}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Applies convolution to an image. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em src} & Input image (must be non-\/empty). \\
+\hline
+{\em dst} & Output image (resized if dimensions mismatch) \\
+\hline
+\end{DoxyParams}
+
+
+Implements \mbox{\hyperlink{class_image_processing_af4a3ae35ed79eba185e9db8b5e0fa075}{Image\+Processing}}.
+
+
+
+\doxysubsection{Member Data Documentation}
+\Hypertarget{class_image_convolution_a92918fc13445381fc888fbbbd4847fcd}\index{ImageConvolution@{ImageConvolution}!kernel@{kernel}}
+\index{kernel@{kernel}!ImageConvolution@{ImageConvolution}}
+\doxysubsubsection{\texorpdfstring{kernel}{kernel}}
+{\footnotesize\ttfamily \label{class_image_convolution_a92918fc13445381fc888fbbbd4847fcd} 
+int8\+\_\+t\texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*} Image\+Convolution\+::kernel\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+2D kernel matrix 
+
+\Hypertarget{class_image_convolution_a8689b92b5f3820808339ae3cf76abfff}\index{ImageConvolution@{ImageConvolution}!kernelHeight@{kernelHeight}}
+\index{kernelHeight@{kernelHeight}!ImageConvolution@{ImageConvolution}}
+\doxysubsubsection{\texorpdfstring{kernelHeight}{kernelHeight}}
+{\footnotesize\ttfamily \label{class_image_convolution_a8689b92b5f3820808339ae3cf76abfff} 
+int Image\+Convolution\+::kernel\+Height\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Height of the convolution kernel (must be odd) 
+
+\Hypertarget{class_image_convolution_a190811cf4413d4705156fe8def2e8dcc}\index{ImageConvolution@{ImageConvolution}!kernelWidth@{kernelWidth}}
+\index{kernelWidth@{kernelWidth}!ImageConvolution@{ImageConvolution}}
+\doxysubsubsection{\texorpdfstring{kernelWidth}{kernelWidth}}
+{\footnotesize\ttfamily \label{class_image_convolution_a190811cf4413d4705156fe8def2e8dcc} 
+int Image\+Convolution\+::kernel\+Width\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Width of the convolution kernel (must be odd) 
+
+\Hypertarget{class_image_convolution_adebc8f0512f6e5de559e6e65f7c2bb19}\index{ImageConvolution@{ImageConvolution}!scalingFunction@{scalingFunction}}
+\index{scalingFunction@{scalingFunction}!ImageConvolution@{ImageConvolution}}
+\doxysubsubsection{\texorpdfstring{scalingFunction}{scalingFunction}}
+{\footnotesize\ttfamily \label{class_image_convolution_adebc8f0512f6e5de559e6e65f7c2bb19} 
+float(\texorpdfstring{$\ast$}{*} Image\+Convolution\+::scaling\+Function) (float)\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Post-\/convolution scaling callback. 
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{image_convolution_8h}{image\+Convolution.\+h}}\item 
+\mbox{\hyperlink{image_convolution_8cpp}{image\+Convolution.\+cpp}}\end{DoxyCompactItemize}

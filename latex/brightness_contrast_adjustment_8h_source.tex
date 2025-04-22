@@ -1,0 +1,17 @@
+\doxysection{brightness\+Contrast\+Adjustment.\+h}
+\hypertarget{brightness_contrast_adjustment_8h_source}{}\label{brightness_contrast_adjustment_8h_source}\mbox{\hyperlink{brightness_contrast_adjustment_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#pragma\ once}}
+\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{image_processing_8h}{imageProcessing.h}}"{}}}
+\DoxyCodeLine{00003\ }
+\DoxyCodeLine{00011\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_brightness_contrast_adjustment_a74d9583230436c7622542dce6a79917e}{BrightnessContrastAdjustment}}\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{class_image_processing}{ImageProcessing}}\ \{}
+\DoxyCodeLine{00012\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00013\ \ \ \ \ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{class_brightness_contrast_adjustment_acd65103d20df4c74a8e4895a259a9be0}{alpha}};\ \ \ }
+\DoxyCodeLine{00014\ \ \ \ \ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{class_brightness_contrast_adjustment_a3b9260163909d835e1d1c30f895370de}{beta}};\ \ \ \ \ }
+\DoxyCodeLine{00015\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00021\ \ \ \ \ \mbox{\hyperlink{class_brightness_contrast_adjustment_a74d9583230436c7622542dce6a79917e}{BrightnessContrastAdjustment}}(\textcolor{keywordtype}{float}\ \mbox{\hyperlink{class_brightness_contrast_adjustment_acd65103d20df4c74a8e4895a259a9be0}{alpha}}\ =\ 1.0f,\ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{class_brightness_contrast_adjustment_a3b9260163909d835e1d1c30f895370de}{beta}}\ =\ 0.0f);}
+\DoxyCodeLine{00022\ }
+\DoxyCodeLine{00028\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_brightness_contrast_adjustment_a777cf7cf7e80e3894300c403b155074b}{process}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{class_image}{Image}}\&\ src,\ \mbox{\hyperlink{class_image}{Image}}\&\ dst)\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00029\ \};}
+
+\end{DoxyCode}

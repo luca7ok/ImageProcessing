@@ -18,9 +18,9 @@ Image::Image(unsigned int w, unsigned int h) {
 		this->m_data = nullptr;
 	}
 	else {
-		this->m_data = new uint8_t* [this->m_height];
+		this->m_data = new uint8_t* [this->m_height]();
 		for (unsigned int i = 0; i < this->m_height; i++) {
-			this->m_data[i] = new uint8_t[this->m_width];
+			this->m_data[i] = new uint8_t[this->m_width](); 
 		}
 	}
 }

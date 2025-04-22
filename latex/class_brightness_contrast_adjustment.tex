@@ -1,0 +1,113 @@
+\doxysection{Brightness\+Contrast\+Adjustment Class Reference}
+\hypertarget{class_brightness_contrast_adjustment}{}\label{class_brightness_contrast_adjustment}\index{BrightnessContrastAdjustment@{BrightnessContrastAdjustment}}
+
+
+Adjusts image brightness and contrast using linear transformation.  
+
+
+
+
+{\ttfamily \#include $<$brightness\+Contrast\+Adjustment.\+h$>$}
+
+Inheritance diagram for Brightness\+Contrast\+Adjustment\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_brightness_contrast_adjustment}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_brightness_contrast_adjustment_a74d9583230436c7622542dce6a79917e}{Brightness\+Contrast\+Adjustment}} (float \mbox{\hyperlink{class_brightness_contrast_adjustment_acd65103d20df4c74a8e4895a259a9be0}{alpha}}=1.\+0f, float \mbox{\hyperlink{class_brightness_contrast_adjustment_a3b9260163909d835e1d1c30f895370de}{beta}}=0.\+0f)
+\begin{DoxyCompactList}\small\item\em Constructs a brightness/contrast adjuster. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_brightness_contrast_adjustment_a777cf7cf7e80e3894300c403b155074b}{process}} (const \mbox{\hyperlink{class_image}{Image}} \&src, \mbox{\hyperlink{class_image}{Image}} \&dst) override
+\begin{DoxyCompactList}\small\item\em Applies brightness/contrast adjustment to an image. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+float \mbox{\hyperlink{class_brightness_contrast_adjustment_acd65103d20df4c74a8e4895a259a9be0}{alpha}}
+\begin{DoxyCompactList}\small\item\em Contrast multiplier (default\+: 1.\+0) \end{DoxyCompactList}\item 
+float \mbox{\hyperlink{class_brightness_contrast_adjustment_a3b9260163909d835e1d1c30f895370de}{beta}}
+\begin{DoxyCompactList}\small\item\em Brightness offset (default\+: 0.\+0) \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Adjusts image brightness and contrast using linear transformation. 
+
+Applies the formula\+: {\ttfamily output = alpha \texorpdfstring{$\ast$}{*} input + beta}, where\+:
+\begin{DoxyItemize}
+\item {\ttfamily alpha} controls contrast (1.\+0 = no change, \texorpdfstring{$<$}{<}1.\+0 = reduced contrast, \texorpdfstring{$>$}{>}1.\+0 = increased contrast)
+\item {\ttfamily beta} controls brightness (0 = no change, positive = brighter, negative = darker) 
+\end{DoxyItemize}
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{class_brightness_contrast_adjustment_a74d9583230436c7622542dce6a79917e}\index{BrightnessContrastAdjustment@{BrightnessContrastAdjustment}!BrightnessContrastAdjustment@{BrightnessContrastAdjustment}}
+\index{BrightnessContrastAdjustment@{BrightnessContrastAdjustment}!BrightnessContrastAdjustment@{BrightnessContrastAdjustment}}
+\doxysubsubsection{\texorpdfstring{BrightnessContrastAdjustment()}{BrightnessContrastAdjustment()}}
+{\footnotesize\ttfamily \label{class_brightness_contrast_adjustment_a74d9583230436c7622542dce6a79917e} 
+Brightness\+Contrast\+Adjustment\+::\+Brightness\+Contrast\+Adjustment (\begin{DoxyParamCaption}\item[{float}]{alpha}{ = {\ttfamily 1.0f}, }\item[{float}]{beta}{ = {\ttfamily 0.0f}}\end{DoxyParamCaption})}
+
+
+
+Constructs a brightness/contrast adjuster. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em alpha} & Contrast multiplier \\
+\hline
+{\em beta} & Brightness offset \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_brightness_contrast_adjustment_a777cf7cf7e80e3894300c403b155074b}\index{BrightnessContrastAdjustment@{BrightnessContrastAdjustment}!process@{process}}
+\index{process@{process}!BrightnessContrastAdjustment@{BrightnessContrastAdjustment}}
+\doxysubsubsection{\texorpdfstring{process()}{process()}}
+{\footnotesize\ttfamily \label{class_brightness_contrast_adjustment_a777cf7cf7e80e3894300c403b155074b} 
+void Brightness\+Contrast\+Adjustment\+::process (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_image}{Image}} \&}]{src}{, }\item[{\mbox{\hyperlink{class_image}{Image}} \&}]{dst}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Applies brightness/contrast adjustment to an image. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em src} & Input image (must be non-\/empty) \\
+\hline
+{\em dst} & Output image (resized if dimensions mismatch) \\
+\hline
+\end{DoxyParams}
+
+
+Implements \mbox{\hyperlink{class_image_processing_af4a3ae35ed79eba185e9db8b5e0fa075}{Image\+Processing}}.
+
+
+
+\doxysubsection{Member Data Documentation}
+\Hypertarget{class_brightness_contrast_adjustment_acd65103d20df4c74a8e4895a259a9be0}\index{BrightnessContrastAdjustment@{BrightnessContrastAdjustment}!alpha@{alpha}}
+\index{alpha@{alpha}!BrightnessContrastAdjustment@{BrightnessContrastAdjustment}}
+\doxysubsubsection{\texorpdfstring{alpha}{alpha}}
+{\footnotesize\ttfamily \label{class_brightness_contrast_adjustment_acd65103d20df4c74a8e4895a259a9be0} 
+float Brightness\+Contrast\+Adjustment\+::alpha\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Contrast multiplier (default\+: 1.\+0) 
+
+\Hypertarget{class_brightness_contrast_adjustment_a3b9260163909d835e1d1c30f895370de}\index{BrightnessContrastAdjustment@{BrightnessContrastAdjustment}!beta@{beta}}
+\index{beta@{beta}!BrightnessContrastAdjustment@{BrightnessContrastAdjustment}}
+\doxysubsubsection{\texorpdfstring{beta}{beta}}
+{\footnotesize\ttfamily \label{class_brightness_contrast_adjustment_a3b9260163909d835e1d1c30f895370de} 
+float Brightness\+Contrast\+Adjustment\+::beta\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Brightness offset (default\+: 0.\+0) 
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{brightness_contrast_adjustment_8h}{brightness\+Contrast\+Adjustment.\+h}}\item 
+\mbox{\hyperlink{brightness_contrast_adjustment_8cpp}{brightness\+Contrast\+Adjustment.\+cpp}}\end{DoxyCompactItemize}

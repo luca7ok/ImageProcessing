@@ -1,0 +1,61 @@
+\doxysection{mean\+Blur Struct Reference}
+\hypertarget{structmean_blur}{}\label{structmean_blur}\index{meanBlur@{meanBlur}}
+
+
+3x3 box blur  
+
+
+
+
+{\ttfamily \#include $<$kernels.\+h$>$}
+
+\doxysubsubsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static float \mbox{\hyperlink{structmean_blur_a0a17f3fda1e771e308bdf30cb79c4374}{scale}} (float value)
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Static Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+static constexpr int \mbox{\hyperlink{structmean_blur_ac47c92808e700e532342d301d7e9fab3}{kernel}} \mbox{[}3\mbox{]}\mbox{[}3\mbox{]}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+3x3 box blur 
+
+\begin{DoxyNote}{Note}
+Uniform blur that may cause edge softening 
+\end{DoxyNote}
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{structmean_blur_a0a17f3fda1e771e308bdf30cb79c4374}\index{meanBlur@{meanBlur}!scale@{scale}}
+\index{scale@{scale}!meanBlur@{meanBlur}}
+\doxysubsubsection{\texorpdfstring{scale()}{scale()}}
+{\footnotesize\ttfamily \label{structmean_blur_a0a17f3fda1e771e308bdf30cb79c4374} 
+static float mean\+Blur\+::scale (\begin{DoxyParamCaption}\item[{float}]{value}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
+
+
+
+\doxysubsection{Member Data Documentation}
+\Hypertarget{structmean_blur_ac47c92808e700e532342d301d7e9fab3}\index{meanBlur@{meanBlur}!kernel@{kernel}}
+\index{kernel@{kernel}!meanBlur@{meanBlur}}
+\doxysubsubsection{\texorpdfstring{kernel}{kernel}}
+{\footnotesize\ttfamily \label{structmean_blur_ac47c92808e700e532342d301d7e9fab3} 
+int mean\+Blur\+::kernel\mbox{[}3\mbox{]}\mbox{[}3\mbox{]}\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [constexpr]}}
+
+{\bfseries Initial value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{=\ \{}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \{1,\ 1,\ 1\},}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \{1,\ 1,\ 1\},}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \{1,\ 1,\ 1\}}
+\DoxyCodeLine{\ \ \ \ \}}
+
+\end{DoxyCode}
+
+
+The documentation for this struct was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{kernels_8h}{kernels.\+h}}\end{DoxyCompactItemize}

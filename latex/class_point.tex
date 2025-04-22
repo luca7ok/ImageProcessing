@@ -1,0 +1,137 @@
+\doxysection{Point Class Reference}
+\hypertarget{class_point}{}\label{class_point}\index{Point@{Point}}
+
+
+Represents a 2D point with integer coordinates.  
+
+
+
+
+{\ttfamily \#include $<$point.\+h$>$}
+
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_point_ad92f2337b839a94ce97dcdb439b4325a}{Point}} ()
+\begin{DoxyCompactList}\small\item\em Default constructor. Creates a point at (0, 0). \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_point_a001c4958c310b248f5c26037aea38a9c}{Point}} (int \mbox{\hyperlink{class_point_a8c779e11e694b20e0946105a9f5de842}{x}}, int \mbox{\hyperlink{class_point_a2e1b5fb2b2a83571f5c0bc0f66a73cf7}{y}})
+\begin{DoxyCompactList}\small\item\em Constructs a point with specified coordinates. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+int \mbox{\hyperlink{class_point_a8c779e11e694b20e0946105a9f5de842}{x}}
+\begin{DoxyCompactList}\small\item\em X-\/coordinate. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{class_point_a2e1b5fb2b2a83571f5c0bc0f66a73cf7}{y}}
+\begin{DoxyCompactList}\small\item\em Y-\/coordinate. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Friends}
+\begin{DoxyCompactItemize}
+\item 
+std\+::ostream \& \mbox{\hyperlink{class_point_a6d0e197b491ee2191ccda4d84636fbc1}{operator$<$$<$}} (std\+::ostream \&os, const \mbox{\hyperlink{class_point}{Point}} \&point)
+\begin{DoxyCompactList}\small\item\em Outputs the point as "{}(x, y)"{} to a stream. \end{DoxyCompactList}\item 
+std\+::istream \& \mbox{\hyperlink{class_point_a30dd3887dcdc0752367213062614216d}{operator$>$$>$}} (std\+::istream \&os, \mbox{\hyperlink{class_point}{Point}} \&point)
+\begin{DoxyCompactList}\small\item\em Reads a point from a stream in "{}x y"{} format. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Represents a 2D point with integer coordinates. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{class_point_ad92f2337b839a94ce97dcdb439b4325a}\index{Point@{Point}!Point@{Point}}
+\index{Point@{Point}!Point@{Point}}
+\doxysubsubsection{\texorpdfstring{Point()}{Point()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \label{class_point_ad92f2337b839a94ce97dcdb439b4325a} 
+Point\+::\+Point (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Default constructor. Creates a point at (0, 0). 
+
+\Hypertarget{class_point_a001c4958c310b248f5c26037aea38a9c}\index{Point@{Point}!Point@{Point}}
+\index{Point@{Point}!Point@{Point}}
+\doxysubsubsection{\texorpdfstring{Point()}{Point()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \label{class_point_a001c4958c310b248f5c26037aea38a9c} 
+Point\+::\+Point (\begin{DoxyParamCaption}\item[{int}]{x}{, }\item[{int}]{y}{}\end{DoxyParamCaption})}
+
+
+
+Constructs a point with specified coordinates. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em x} & X-\/coordinate \\
+\hline
+{\em y} & Y-\/coordinate \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Friends And Related Symbol Documentation}
+\Hypertarget{class_point_a6d0e197b491ee2191ccda4d84636fbc1}\index{Point@{Point}!operator$<$$<$@{operator$<$$<$}}
+\index{operator$<$$<$@{operator$<$$<$}!Point@{Point}}
+\doxysubsubsection{\texorpdfstring{operator$<$$<$}{operator<<}}
+{\footnotesize\ttfamily \label{class_point_a6d0e197b491ee2191ccda4d84636fbc1} 
+std\+::ostream \& operator$<$$<$ (\begin{DoxyParamCaption}\item[{std\+::ostream \&}]{os}{, }\item[{const \mbox{\hyperlink{class_point}{Point}} \&}]{point}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [friend]}}
+
+
+
+Outputs the point as "{}(x, y)"{} to a stream. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em os} & Output stream \\
+\hline
+{\em point} & \doxylink{class_point}{Point} to output \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Reference to the output stream 
+\end{DoxyReturn}
+\Hypertarget{class_point_a30dd3887dcdc0752367213062614216d}\index{Point@{Point}!operator$>$$>$@{operator$>$$>$}}
+\index{operator$>$$>$@{operator$>$$>$}!Point@{Point}}
+\doxysubsubsection{\texorpdfstring{operator$>$$>$}{operator>>}}
+{\footnotesize\ttfamily \label{class_point_a30dd3887dcdc0752367213062614216d} 
+std\+::istream \& operator$>$$>$ (\begin{DoxyParamCaption}\item[{std\+::istream \&}]{os}{, }\item[{\mbox{\hyperlink{class_point}{Point}} \&}]{point}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [friend]}}
+
+
+
+Reads a point from a stream in "{}x y"{} format. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em is} & Input stream \\
+\hline
+{\em point} & \doxylink{class_point}{Point} to store the result \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Reference to the input stream 
+\end{DoxyReturn}
+
+
+\doxysubsection{Member Data Documentation}
+\Hypertarget{class_point_a8c779e11e694b20e0946105a9f5de842}\index{Point@{Point}!x@{x}}
+\index{x@{x}!Point@{Point}}
+\doxysubsubsection{\texorpdfstring{x}{x}}
+{\footnotesize\ttfamily \label{class_point_a8c779e11e694b20e0946105a9f5de842} 
+int Point\+::x}
+
+
+
+X-\/coordinate. 
+
+\Hypertarget{class_point_a2e1b5fb2b2a83571f5c0bc0f66a73cf7}\index{Point@{Point}!y@{y}}
+\index{y@{y}!Point@{Point}}
+\doxysubsubsection{\texorpdfstring{y}{y}}
+{\footnotesize\ttfamily \label{class_point_a2e1b5fb2b2a83571f5c0bc0f66a73cf7} 
+int Point\+::y}
+
+
+
+Y-\/coordinate. 
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{point_8h}{point.\+h}}\item 
+\mbox{\hyperlink{point_8cpp}{point.\+cpp}}\end{DoxyCompactItemize}

@@ -3,10 +3,25 @@
 #include "image.h"
 #include "rectangle.h"
 
+/**
+* @namespace Drawing
+* @brief Provides 2D primitive drawing functions for images
+* @details Implements common rasterization algorithms
+*          - Midpoint circle algorithm
+*          - Bresenham's line algorithm
+*          - Rectangle outline drawing
+* @note All functions perform bounds checking and modify the image in-place.
+*/
 namespace Drawing {
-	void drawCircle(Image& img, Point center, int radius, uint8_t color) {
-		// Mid-Point Circle Drawing Algorithm
-		
+	/**
+	* @brief Draws a circle outline using the midpoint algorithm
+	* @param img Target image (must be non-empty)
+	* @param center Center point of the circle
+	* @param radius Radius of the circle (must be > 0)
+	* @param color Grayscale color value (0-255)
+	* @note Only draws pixels within image bounds.
+	*/
+	void drawCircle(Image& img, Point center, int radius, uint8_t color) {		
 		if (img.isEmpty()) {
 			throw std::invalid_argument("Image is empty");
 		}
@@ -55,8 +70,16 @@ namespace Drawing {
 		}
 	}
 	
+	/**
+	* @brief Draws a line using Bresenham's algorithm
+	* @param img Target image (must be non-empty)
+	* @param p1 Starting point of the line
+	* @param p2 Ending point of the line
+	* @param color Grayscale color value (0-255)
+	* @throws std::invalid_argument if image is empty
+	* @note Handles all slope cases and only draws visible pixels
+	*/
 	void drawLine(Image& img, Point p1, Point p2, uint8_t color) {
-		// Bresenham’s Line Drawing Algorithm
 
 		if (img.isEmpty()) {
 			throw std::invalid_argument("Image is empty");
@@ -90,6 +113,12 @@ namespace Drawing {
 		}
 	}
 
+	/**
+	* @brief Draws a rectangle outline from a Rectangle object
+	* @param img Target image (must be non-empty)
+	* @param r Rectangle to draw (position + dimensions)
+	* @param color Grayscale color value (0-255)
+	*/
 	void drawRectangle(Image& img, Rectangle r, uint8_t color) {
 		if (img.isEmpty()) {
 			throw std::invalid_argument("Image is empty");
@@ -105,6 +134,13 @@ namespace Drawing {
 		drawLine(img, Point(x1, y1), Point(x1, y2), color);
 	}
 
+	/**
+	* @brief Draws a rectangle outline from two corner points
+	* @param img Target image (must be non-empty)
+	* @param tl Top-left corner point
+	* @param br Bottom-right corner point
+	* @param color Grayscale color value (0-255)
+	*/
 	void drawRectangle(Image& img, Point tl, Point br, uint8_t color) {
 		if (img.isEmpty()) {
 			throw std::invalid_argument("Image is empty");

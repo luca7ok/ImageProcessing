@@ -1,0 +1,61 @@
+\doxysection{horizontal\+Sobel Struct Reference}
+\hypertarget{structhorizontal_sobel}{}\label{structhorizontal_sobel}\index{horizontalSobel@{horizontalSobel}}
+
+
+Horizontal edge detection kernel (Sobel operator)  
+
+
+
+
+{\ttfamily \#include $<$kernels.\+h$>$}
+
+\doxysubsubsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static float \mbox{\hyperlink{structhorizontal_sobel_a7a2852a0f6f24d4af0a9eb9ecb8e1ec0}{scale}} (float value)
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Static Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+static constexpr int \mbox{\hyperlink{structhorizontal_sobel_aa454eebe237b2eb38f024105373eb44c}{kernel}} \mbox{[}3\mbox{]}\mbox{[}3\mbox{]}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Horizontal edge detection kernel (Sobel operator) 
+
+\begin{DoxyNote}{Note}
+Detects vertical edges by measuring horizontal intensity changes Scale function remaps output to \mbox{[}0, 255\mbox{]} range 
+\end{DoxyNote}
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{structhorizontal_sobel_a7a2852a0f6f24d4af0a9eb9ecb8e1ec0}\index{horizontalSobel@{horizontalSobel}!scale@{scale}}
+\index{scale@{scale}!horizontalSobel@{horizontalSobel}}
+\doxysubsubsection{\texorpdfstring{scale()}{scale()}}
+{\footnotesize\ttfamily \label{structhorizontal_sobel_a7a2852a0f6f24d4af0a9eb9ecb8e1ec0} 
+static float horizontal\+Sobel\+::scale (\begin{DoxyParamCaption}\item[{float}]{value}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
+
+
+
+\doxysubsection{Member Data Documentation}
+\Hypertarget{structhorizontal_sobel_aa454eebe237b2eb38f024105373eb44c}\index{horizontalSobel@{horizontalSobel}!kernel@{kernel}}
+\index{kernel@{kernel}!horizontalSobel@{horizontalSobel}}
+\doxysubsubsection{\texorpdfstring{kernel}{kernel}}
+{\footnotesize\ttfamily \label{structhorizontal_sobel_aa454eebe237b2eb38f024105373eb44c} 
+int horizontal\+Sobel\+::kernel\mbox{[}3\mbox{]}\mbox{[}3\mbox{]}\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [constexpr]}}
+
+{\bfseries Initial value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{=\ \{}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \{1,\ 2,\ 1\},}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \{0,\ 0,\ 0\},}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \{-\/1,\ -\/2,\ -\/1\}}
+\DoxyCodeLine{\ \ \ \ \}}
+
+\end{DoxyCode}
+
+
+The documentation for this struct was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{kernels_8h}{kernels.\+h}}\end{DoxyCompactItemize}

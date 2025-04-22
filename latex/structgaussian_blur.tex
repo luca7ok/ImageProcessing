@@ -1,0 +1,61 @@
+\doxysection{gaussian\+Blur Struct Reference}
+\hypertarget{structgaussian_blur}{}\label{structgaussian_blur}\index{gaussianBlur@{gaussianBlur}}
+
+
+3x3 Gaussian blur kernel  
+
+
+
+
+{\ttfamily \#include $<$kernels.\+h$>$}
+
+\doxysubsubsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static float \mbox{\hyperlink{structgaussian_blur_a1e16c12de955ac1a03e90551c20b8343}{scale}} (float value)
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Static Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+static constexpr int \mbox{\hyperlink{structgaussian_blur_ab2bdfc27b768f12143673d24e124e9e0}{kernel}} \mbox{[}3\mbox{]}\mbox{[}3\mbox{]}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+3x3 Gaussian blur kernel 
+
+\begin{DoxyNote}{Note}
+Provides smooth blur while preserving edges better than mean blur 
+\end{DoxyNote}
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{structgaussian_blur_a1e16c12de955ac1a03e90551c20b8343}\index{gaussianBlur@{gaussianBlur}!scale@{scale}}
+\index{scale@{scale}!gaussianBlur@{gaussianBlur}}
+\doxysubsubsection{\texorpdfstring{scale()}{scale()}}
+{\footnotesize\ttfamily \label{structgaussian_blur_a1e16c12de955ac1a03e90551c20b8343} 
+static float gaussian\+Blur\+::scale (\begin{DoxyParamCaption}\item[{float}]{value}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
+
+
+
+\doxysubsection{Member Data Documentation}
+\Hypertarget{structgaussian_blur_ab2bdfc27b768f12143673d24e124e9e0}\index{gaussianBlur@{gaussianBlur}!kernel@{kernel}}
+\index{kernel@{kernel}!gaussianBlur@{gaussianBlur}}
+\doxysubsubsection{\texorpdfstring{kernel}{kernel}}
+{\footnotesize\ttfamily \label{structgaussian_blur_ab2bdfc27b768f12143673d24e124e9e0} 
+int gaussian\+Blur\+::kernel\mbox{[}3\mbox{]}\mbox{[}3\mbox{]}\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [constexpr]}}
+
+{\bfseries Initial value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{=\ \{}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \{1,\ 2,\ 1\},}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \{2,\ 4,\ 2\},}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \{1,\ 2,\ 1\}}
+\DoxyCodeLine{\ \ \ \ \}}
+
+\end{DoxyCode}
+
+
+The documentation for this struct was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{kernels_8h}{kernels.\+h}}\end{DoxyCompactItemize}

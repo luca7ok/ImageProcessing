@@ -1,0 +1,100 @@
+\doxysection{Gamma\+Correction Class Reference}
+\hypertarget{class_gamma_correction}{}\label{class_gamma_correction}\index{GammaCorrection@{GammaCorrection}}
+
+
+Applies gamma correction to an image.  
+
+
+
+
+{\ttfamily \#include $<$gamma\+Correction.\+h$>$}
+
+Inheritance diagram for Gamma\+Correction\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_gamma_correction}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_gamma_correction_ae21be8de1541e70e92fcb01e5f21068b}{Gamma\+Correction}} (float g=1.\+0f)
+\begin{DoxyCompactList}\small\item\em Constructor. Creates a gamma corrector with specified exponent. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_gamma_correction_a3218aaad26cf7da8016457182277c633}{process}} (const \mbox{\hyperlink{class_image}{Image}} \&src, \mbox{\hyperlink{class_image}{Image}} \&dst) override
+\begin{DoxyCompactList}\small\item\em Applies gamma correction to an image. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+float \mbox{\hyperlink{class_gamma_correction_ab81b507a63f06678db00ddd3d97e492e}{gamma}}
+\begin{DoxyCompactList}\small\item\em Gamma exponent (must be \texorpdfstring{$>$}{>} 0, default\+: 1.\+0) \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Applies gamma correction to an image. 
+
+Performs the operation\+: {\ttfamily output = 255 \texorpdfstring{$\ast$}{*} (input/255)\texorpdfstring{$^\wedge$}{\string^}gamma}
+\begin{DoxyItemize}
+\item Gamma \texorpdfstring{$<$}{<} 1.\+0\+: Brightens dark regions (e.\+g., gamma=0.\+5)
+\item Gamma = 1.\+0\+: No change
+\item Gamma \texorpdfstring{$>$}{>} 1.\+0\+: Darkens bright regions (e.\+g., gamma=2.\+0) 
+\end{DoxyItemize}
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{class_gamma_correction_ae21be8de1541e70e92fcb01e5f21068b}\index{GammaCorrection@{GammaCorrection}!GammaCorrection@{GammaCorrection}}
+\index{GammaCorrection@{GammaCorrection}!GammaCorrection@{GammaCorrection}}
+\doxysubsubsection{\texorpdfstring{GammaCorrection()}{GammaCorrection()}}
+{\footnotesize\ttfamily \label{class_gamma_correction_ae21be8de1541e70e92fcb01e5f21068b} 
+Gamma\+Correction\+::\+Gamma\+Correction (\begin{DoxyParamCaption}\item[{float}]{g}{ = {\ttfamily 1.0f}}\end{DoxyParamCaption})}
+
+
+
+Constructor. Creates a gamma corrector with specified exponent. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em g} & Gamma value \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_gamma_correction_a3218aaad26cf7da8016457182277c633}\index{GammaCorrection@{GammaCorrection}!process@{process}}
+\index{process@{process}!GammaCorrection@{GammaCorrection}}
+\doxysubsubsection{\texorpdfstring{process()}{process()}}
+{\footnotesize\ttfamily \label{class_gamma_correction_a3218aaad26cf7da8016457182277c633} 
+void Gamma\+Correction\+::process (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_image}{Image}} \&}]{src}{, }\item[{\mbox{\hyperlink{class_image}{Image}} \&}]{dst}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Applies gamma correction to an image. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em src} & Input image (must be non-\/empty) \\
+\hline
+{\em dst} & Output image (resized if dimensions mismatch). \\
+\hline
+\end{DoxyParams}
+
+
+Implements \mbox{\hyperlink{class_image_processing_af4a3ae35ed79eba185e9db8b5e0fa075}{Image\+Processing}}.
+
+
+
+\doxysubsection{Member Data Documentation}
+\Hypertarget{class_gamma_correction_ab81b507a63f06678db00ddd3d97e492e}\index{GammaCorrection@{GammaCorrection}!gamma@{gamma}}
+\index{gamma@{gamma}!GammaCorrection@{GammaCorrection}}
+\doxysubsubsection{\texorpdfstring{gamma}{gamma}}
+{\footnotesize\ttfamily \label{class_gamma_correction_ab81b507a63f06678db00ddd3d97e492e} 
+float Gamma\+Correction\+::gamma\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Gamma exponent (must be \texorpdfstring{$>$}{>} 0, default\+: 1.\+0) 
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{gamma_correction_8h}{gamma\+Correction.\+h}}\item 
+\mbox{\hyperlink{gamma_correction_8cpp}{gamma\+Correction.\+cpp}}\end{DoxyCompactItemize}

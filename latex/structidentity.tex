@@ -1,0 +1,61 @@
+\doxysection{identity Struct Reference}
+\hypertarget{structidentity}{}\label{structidentity}\index{identity@{identity}}
+
+
+Identity kernel (no modification to image)  
+
+
+
+
+{\ttfamily \#include $<$kernels.\+h$>$}
+
+\doxysubsubsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static float \mbox{\hyperlink{structidentity_a0d42389b51e7d0b31a6280b4f4bcb78b}{scale}} (float value)
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Static Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+static constexpr int \mbox{\hyperlink{structidentity_ae8834038e5ed1f4779d0d76f16ee851d}{kernel}} \mbox{[}3\mbox{]}\mbox{[}3\mbox{]}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Identity kernel (no modification to image) 
+
+\begin{DoxyNote}{Note}
+Output = Original pixel value (scale function returns input unchanged) 
+\end{DoxyNote}
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{structidentity_a0d42389b51e7d0b31a6280b4f4bcb78b}\index{identity@{identity}!scale@{scale}}
+\index{scale@{scale}!identity@{identity}}
+\doxysubsubsection{\texorpdfstring{scale()}{scale()}}
+{\footnotesize\ttfamily \label{structidentity_a0d42389b51e7d0b31a6280b4f4bcb78b} 
+static float identity\+::scale (\begin{DoxyParamCaption}\item[{float}]{value}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
+
+
+
+\doxysubsection{Member Data Documentation}
+\Hypertarget{structidentity_ae8834038e5ed1f4779d0d76f16ee851d}\index{identity@{identity}!kernel@{kernel}}
+\index{kernel@{kernel}!identity@{identity}}
+\doxysubsubsection{\texorpdfstring{kernel}{kernel}}
+{\footnotesize\ttfamily \label{structidentity_ae8834038e5ed1f4779d0d76f16ee851d} 
+int identity\+::kernel\mbox{[}3\mbox{]}\mbox{[}3\mbox{]}\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [constexpr]}}
+
+{\bfseries Initial value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{=\ \{}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \{0,\ 0,\ 0\},}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \{0,\ 1,\ 0\},}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \{0,\ 0,\ 0\}}
+\DoxyCodeLine{\ \ \ \ \}}
+
+\end{DoxyCode}
+
+
+The documentation for this struct was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{kernels_8h}{kernels.\+h}}\end{DoxyCompactItemize}

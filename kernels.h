@@ -1,5 +1,11 @@
 #pragma once
 
+
+/**
+ * @struct identity
+ * @brief Identity kernel (no modification to image)
+ * @note Output = Original pixel value (scale function returns input unchanged)
+ */
 struct identity {
 	static constexpr int kernel[3][3] = {
 		{0, 0, 0},
@@ -11,6 +17,11 @@ struct identity {
 	}
 };
 
+/**
+ * @struct gaussianBlur
+ * @brief 3x3 Gaussian blur kernel
+ * @note Provides smooth blur while preserving edges better than mean blur
+ */
 struct gaussianBlur {
 	static constexpr int kernel[3][3] = {
 		{1, 2, 1},
@@ -22,6 +33,12 @@ struct gaussianBlur {
 	}
 };
 
+
+/**
+ * @struct meanBlur
+ * @brief 3x3 box blur
+ * @note Uniform blur that may cause edge softening
+ */
 struct meanBlur {
 	static constexpr int kernel[3][3] = {
 		{1, 1, 1},
@@ -34,6 +51,12 @@ struct meanBlur {
 
 };
 
+/**
+ * @struct horizontalSobel
+ * @brief Horizontal edge detection kernel (Sobel operator)
+ * @note Detects vertical edges by measuring horizontal intensity changes
+ *       Scale function remaps output to [0, 255] range
+ */
 struct horizontalSobel {
 	static constexpr int kernel[3][3] = {
 		{1, 2, 1},
@@ -47,6 +70,12 @@ struct horizontalSobel {
 	}
 };
 
+/**
+ * @struct verticalSobel
+ * @brief Vertical edge detection kernel (Sobel operator)
+ * @note Detects horizontal edges by measuring vertical intensity changes
+ *       Scale function remaps output to [0, 255] range
+ */
 struct verticalSobel {
 	static constexpr int kernel[3][3] = {
 		{-1, 0, 1},

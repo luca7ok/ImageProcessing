@@ -1,0 +1,21 @@
+\doxysection{drawing.\+h File Reference}
+\hypertarget{drawing_8h}{}\label{drawing_8h}\index{drawing.h@{drawing.h}}
+{\ttfamily \#include "{}point.\+h"{}}\newline
+{\ttfamily \#include "{}image.\+h"{}}\newline
+{\ttfamily \#include "{}rectangle.\+h"{}}\newline
+\doxysubsubsection*{Namespaces}
+\begin{DoxyCompactItemize}
+\item 
+namespace \mbox{\hyperlink{namespace_drawing}{Drawing}}
+\begin{DoxyCompactList}\small\item\em Provides 2D primitive drawing functions for images. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{namespace_drawing_a7b026e7fb01b5b7f565f3f3ee13d064c}{Drawing\+::draw\+Circle}} (\mbox{\hyperlink{class_image}{Image}} \&img, \mbox{\hyperlink{class_point}{Point}} center, int radius, uint8\+\_\+t color)
+\begin{DoxyCompactList}\small\item\em Draws a circle outline using the midpoint algorithm. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{namespace_drawing_a9a107947814051b790bd448a6d16a13c}{Drawing\+::draw\+Line}} (\mbox{\hyperlink{class_image}{Image}} \&img, \mbox{\hyperlink{class_point}{Point}} p1, \mbox{\hyperlink{class_point}{Point}} p2, uint8\+\_\+t color)
+\begin{DoxyCompactList}\small\item\em Draws a line using Bresenham\textquotesingle{}s algorithm. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{namespace_drawing_ae1fbb6377f0a329d7e27474a67cca11e}{Drawing\+::draw\+Rectangle}} (\mbox{\hyperlink{class_image}{Image}} \&img, \mbox{\hyperlink{class_rectangle}{Rectangle}} r, uint8\+\_\+t color)
+\begin{DoxyCompactList}\small\item\em Draws a rectangle outline from a \doxylink{class_rectangle}{Rectangle} object. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{namespace_drawing_a4039b796ada8a749f0a00189e3e62977}{Drawing\+::draw\+Rectangle}} (\mbox{\hyperlink{class_image}{Image}} \&img, \mbox{\hyperlink{class_point}{Point}} tl, \mbox{\hyperlink{class_point}{Point}} br, uint8\+\_\+t color)
+\begin{DoxyCompactList}\small\item\em Draws a rectangle outline from two corner points. \end{DoxyCompactList}\end{DoxyCompactItemize}
