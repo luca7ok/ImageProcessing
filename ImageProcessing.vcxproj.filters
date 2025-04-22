@@ -45,6 +45,9 @@
     <ClInclude Include="kernels.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="drawing.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp">
@@ -54,9 +57,6 @@
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="image.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="imageProcessing.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="point.cpp">

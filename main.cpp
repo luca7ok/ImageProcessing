@@ -4,15 +4,15 @@
 #include "gammaCorrection.h"
 #include "imageConvolution.h"
 #include "kernels.h"
-
+#include "drawing.h"
+#include <filesystem>
 
 int main() {
 	try {
-		Image image1, image2;
-		image1.load("inputImages/casablanca.ascii.pgm");
-		ImageConvolution conv(3, 3, horizontalSobel::kernel, horizontalSobel::scale);
-		conv.process(image1, image1);
-		image1.save("output.ascii.pgm");
+		/*for (const auto& entry : std::filesystem::directory_iterator("inputImages")){
+			std::cout<<entry.path().filename().string()<<'\n';
+		}*/
+
 	}
 	catch (std::exception& e) {
 		std::cerr << e.what() << '\n';

@@ -1,5 +1,6 @@
 #pragma once
 #include "point.h";
+#include <algorithm>
 
 class Rectangle {
 public:
@@ -14,4 +15,9 @@ public:
 
 	friend std::ostream& operator<<(std::ostream& os, const Rectangle& rect);
 	friend std::istream& operator>>(std::istream& is, Rectangle& rect);
+
+	Rectangle operator+(const Point& p) const;
+	Rectangle operator-(const Point& p) const;
+	Rectangle operator&(const Rectangle& r) const;
+	Rectangle operator|(const Rectangle& r) const;
 };

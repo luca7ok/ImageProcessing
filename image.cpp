@@ -291,3 +291,7 @@ Image Image::ones(unsigned int width, unsigned int height) {
 	}
 	return image;
 }
+
+bool Image::inGrid(unsigned int x, unsigned int y) {
+	return x >= 0 && y >= 0 && x < this->m_height && y < this->m_width;
+}

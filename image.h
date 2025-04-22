@@ -28,10 +28,7 @@ public:
 	Image operator+(int8_t scalar) const;
 	Image operator-(int8_t scalar) const;
 	Image operator*(int8_t scalar) const;
-	/*
-	bool getROI(Image& roiImg, Rectangle roiRect);
-	bool getROI(Image& roiImg, unsigned int x, unsigned int y, unsigned int width, unsigned int height);
-	*/
+
 	bool isEmpty() const;
 	Size size() const;
 
@@ -47,4 +44,6 @@ public:
 	
 	static Image zeros(unsigned int width, unsigned int height);
 	static Image ones(unsigned int width, unsigned int height); 
+
+	bool inGrid(unsigned int x, unsigned int y);
 };
