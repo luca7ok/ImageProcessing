@@ -4,14 +4,12 @@
 #include "gammaCorrection.h"
 #include "imageConvolution.h"
 #include "kernels.h"
-#include "drawing.h"
+#include "tests.h"
 #include <filesystem>
 
 int main() {
 	try {
-		/*for (const auto& entry : std::filesystem::directory_iterator("inputImages")){
-			std::cout<<entry.path().filename().string()<<'\n';
-		}*/
+		testAll();
 	}
 	catch (std::exception& e) {
 		std::cerr << e.what() << '\n';

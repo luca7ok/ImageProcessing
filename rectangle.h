@@ -1,5 +1,5 @@
 #pragma once
-#include "point.h";
+#include "point.h"
 #include <algorithm>
 
 /**
